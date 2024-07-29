@@ -1,0 +1,21 @@
+<h1>Employee REST</h1>
+<div class="oj-hybrid-padding">
+  <h1>Employees Content Area</h1>
+  <div>
+     <oj-table id="output-table"  aria-label="Employee Table"
+     dnd='{"reorder": {"columns": "enabled"}}'
+                                        scroll-policy='loadMoreOnScroll'
+                                        scroll-policy-options='{"fetchSize": 10}'
+                                        data='[[datasource]]' 
+                                        columns='[{"headerText": "Employee Id", 
+                                                   "field": "EmployeeId"},
+                                                  {"headerText": "Employee Name", 
+                                                   "field": "EmployeeName"},
+                                                  {"headerText": "Salary", 
+                                                   "field": "EmployeeSalary"},
+                                                  {"headerText": "Age", 
+                                                   "field": "EmployeeAge"}]'
+                                        style='width: 100%; height: 400px;'>
+</oj-table>
+  </div>
+</div>

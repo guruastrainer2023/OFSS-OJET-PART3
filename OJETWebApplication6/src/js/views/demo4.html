@@ -1,0 +1,40 @@
+<h1>Bubble Chart</h1>
+<div id="sampleDemo" class="demo-padding demo-container">
+    <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+              
+      <div id="chart-container" class="oj-flex oj-sm-padding-1x oj-sm-flex-items-1">
+        <div class="oj-flex-item oj-sm-12 oj-md-6">
+          <oj-chart
+            id="bubbleChart"
+            type="bubble"
+            data="[[dataProvider]]"
+            animation-on-data-change="auto"
+            plot-area="[[plotArea]]"
+            legend.position="top"
+            x-axis="[[xAxis]]"
+            y-axis="[[yAxis]]">
+            <template slot="itemTemplate" data-oj-as="item">
+              <oj-chart-item
+                x="[[item.data.x]]"
+                y="[[item.data.y]]"
+                z="[[item.data.z]]"
+                group-id="[[ [item.data.group] ]]"
+                series-id="[[item.data.series]]"></oj-chart-item>
+            </template>
+            <template slot="seriesTemplate" data-oj-as="series">
+              <oj-chart-series
+                color='[[ series.id == "Series 1" ? color1 : null ]]'
+                border-color='[[ series.id == "Series 1" ? borderColor1 : null ]]'
+                marker-shape='[[ series.id == "Series 1" ? markerShape1 : null ]]'
+                pattern='[[ series.id == "Series 1" ? pattern1 : null ]]'></oj-chart-series>
+            </template>
+          </oj-chart>
+        </div>
+      
+        
+      </div>
+      
+      
+      
+    </div>
+  </div>

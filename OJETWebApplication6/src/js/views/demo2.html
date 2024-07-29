@@ -1,0 +1,62 @@
+<h1>Bar Chart</h1>
+<div id="sampleDemo" class="demo-padding demo-container">
+    <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+              
+      <div id="chart-container">
+        <oj-form-layout aria-controls="barChart">
+          <demo-select-enum
+            id="labelPositionId"
+            label-hint="Data Label Position"
+            value="{{labelPosition}}"
+            enum-values='["auto", "center", "insideBarEdge", "outsideBarEdge", "none"]'></demo-select-enum>
+      
+          <demo-radioset-enum
+            label-hint="Stack Label"
+            id="stackLabelToggle"
+            direction="row"
+            value="{{stackLabelValue}}"
+            enum-values='["off", "on"]'></demo-radioset-enum>
+        </oj-form-layout>
+      
+        <div class="oj-typography-heading-xs">Company New Hires</div>
+      
+        <oj-chart
+          class="demo-barchart-datalabels-style"
+          id="barChart"
+          type="area"
+          data="[[dataProvider]]"
+          animation-on-display="auto"
+          orientation="[[orientationValue]]"
+          style-defaults.data-label-position="[[labelPosition]]"
+          stack="[[stackValue]]"
+          stack-label="[[stackLabelValue]]"
+          y-axis.tick-label.rendered="off">
+          <template slot="itemTemplate" data-oj-as="item">
+            <oj-chart-item
+              value="[[item.data.value]]"
+              group-id="[[ [item.data.year] ]]"
+              series-id="[[item.data.company]]"
+              label="[[item.data.value.toString()]]"></oj-chart-item>
+          </template>
+        </oj-chart>
+        <oj-toolbar id="myToolbar" aria-label="Chart Display Options Toolbar" aria-controls="barChart">
+          <!-- vertical/horizontal toggle button -->
+          <demo-chart-orientation-control
+            id="orientationControl"
+            type="bar"
+            focus-management="none"
+            orientation="{{orientationValue}}"></demo-chart-orientation-control>
+          <span role="separator" aria-orientation="vertical" class="oj-toolbar-separator"></span>
+          <!-- unstacked/stacked toggle button -->
+          <demo-chart-stack-control
+            id="stackControl"
+            type="bar"
+            focus-management="none"
+            stack="{{stackValue}}"></demo-chart-stack-control>
+        </oj-toolbar>
+      </div>
+      
+      
+      
+    </div>
+  </div>

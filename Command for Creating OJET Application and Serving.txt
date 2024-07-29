@@ -1,0 +1,3 @@
+npx @oracle/ojet-cli create JET_Web_Application --template=navdrawer
+
+npx ojet serve

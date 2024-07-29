@@ -1,0 +1,32 @@
+<h1>Accordian Layout</h1>
+<div id="sampleDemo" class="demo-padding demo-container">
+    <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+              
+      <div id="accordionPage" data-oj-binding-provider="none">
+        <oj-accordion id="a1" multiple expanded='[{"id":"c2"}, {"id":"c3"}]'>
+          <oj-collapsible id="c1">
+            <h3 slot="header">Header 1</h3>
+            <p>Content 1.</p>
+          </oj-collapsible>
+          <oj-collapsible id="c2" expanded>
+            <h3 slot="header">Header 2</h3>
+            <p>Content 2.</p>
+          </oj-collapsible>
+          <oj-collapsible id="c3" expanded>
+            <h3 slot="header">Header 3</h3>
+            <p>Content 3.</p>
+          </oj-collapsible>
+          <oj-collapsible id="c4" expanded>
+            <h3 slot="header">Header 4</h3>
+            <oj-collapsible id="innerCollapsible">
+              <h6 slot="header">Inner Collapsible</h6>
+              <p>I'm a collapsible inside an accordion.</p>
+            </oj-collapsible>
+          </oj-collapsible>
+        </oj-accordion>
+      </div>
+      
+      
+      
+    </div>
+  </div>

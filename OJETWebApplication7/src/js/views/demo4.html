@@ -1,0 +1,44 @@
+<h1>Add a Person</h1>
+<div id="output-table">
+  <oj-form-layout readonly="false" colspan-wrap="wrap" max-columns="1">
+    <div>
+      <oj-c-input-number id="personIdInput" label-hint="Person Id" value="{{inputPersonId}}"></oj-c-input-number>
+      <oj-input-text id="personNameInput" label-hint="Person Name" value="{{inputPersonName}}"></oj-input-text>
+      <oj-c-input-number id="salaryInput" label-hint="Salary" value="{{inputSalary}}"></oj-c-input-number>
+
+    </div>
+    <div>
+      <oj-button id="addButton" on-oj-action="[[addRow]]">Create</oj-button>
+    </div>
+ 
+  <oj-bind-if test="[[showTable() === true ]]"> 
+    <h1>Person Data</h1>
+    <oj-bind-text value="[[personArr.length]]"></oj-bind-text>
+    
+    <div class="oj-hybrid-padding">
+      <h1>Persons Content Area</h1>
+  
+      <div>
+          <oj-table id="table" data="[[personArr]]"
+          columns='[{"headerText": "Person Id",
+             "field": "id"},
+            {"headerText": "Person Name",
+             "field": "name"},
+            {"headerText": "Salary",
+             "field": "salary"}]'
+            style="width:100%">
+      </oj-table>
+      
+      </div>
+    </div>
+  
+
+  </oj-table>
+
+</oj-form-layout>
+    
+</oj-bind-if>
+ 
+  <div>
+
+  </div>

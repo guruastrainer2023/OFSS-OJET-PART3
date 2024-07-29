@@ -1,0 +1,20 @@
+<h1>Person REST</h1>
+
+<div class="oj-hybrid-padding">
+    <h1>Persons Content Area</h1>
+    <div>
+       <oj-table id="output-table"  aria-label="Person Table"
+       dnd='{"reorder": {"columns": "enabled"}}'
+                                          scroll-policy='loadMoreOnScroll'
+                                          scroll-policy-options='{"fetchSize": 10}'
+                                          data='[[datasource]]' 
+                                          columns='[{"headerText": "Person Id", 
+                                                     "field": "id"},
+                                                    {"headerText": "Person Name", 
+                                                     "field": "name"},
+                                                    {"headerText": "Salary", 
+                                                     "field": "salary"}]'
+                                          style='width: 100%; height: 400px;'>
+  </oj-table>
+    </div>
+  </div>

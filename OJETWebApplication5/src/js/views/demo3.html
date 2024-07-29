@@ -1,0 +1,29 @@
+<h1>Modal Dialog</h1>
+<div id="sampleDemo" class="demo-padding demo-container">
+    <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+              
+      <div id="div1">
+        <oj-dialog id="modalDialog1" dialog-title="Modal Dialog" aria-describedby="desc">
+          <div slot="body">
+            <p id="desc">
+              This is the dialog content. User can change dialog resize behavior, cancel behavior and drag
+              behavior by setting attributes. Default attribute value depends on the theme.
+            </p>
+          </div>
+          <div slot="footer">
+            <oj-c-button id="okButton"  label="OK" on-oj-action="[[close]]"></oj-c-button>
+          </div>
+        </oj-dialog>
+        <oj-button id="buttonOpener" label="Open Modal Dialog" on-oj-action="[[open]]"></oj-button>
+        <div class="oj-sm-padding-4x-top" id="form-container">
+          <oj-form-layout direction="row" max-columns="1">
+            <oj-input-text value="{{textVal1}}" label-hint="Address 1"></oj-input-text>
+            <oj-input-text value="{{textVal2}}" label-hint="Address 2"></oj-input-text>
+          </oj-form-layout>
+        </div>
+      </div>
+      
+      
+      
+    </div>
+  </div>

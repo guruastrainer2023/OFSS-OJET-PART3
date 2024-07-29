@@ -1,0 +1,80 @@
+<h1>Tab Bar Demo</h1>
+<div id="sampleDemo" class="demo-padding demo-container">
+    <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+              
+      <div id="tabbardemo">
+        <div class="oj-panel oj-bg-info-30 oj-sm-margin-4x-bottom">
+          <div class="oj-flex">
+            <div class="oj-flex-item oj-sm-padding-2x-horizontal">
+              <oj-radioset
+                id="displayRadioId"
+                labelled-by="displaylabelid"
+                label-hint="Display"
+                label-edge="inside"
+                value="{{display}}">
+                <oj-option id="all" value="all">All</oj-option>
+                <oj-option id="icons" value="icons">Icons</oj-option>
+              </oj-radioset>
+            </div>
+            <div class="oj-flex-item oj-sm-padding-2x-horizontal">
+              <oj-radioset
+                id="edgeRadioId"
+                labelled-by="edgeLabelId"
+                label-hint="Edge"
+                label-edge="inside"
+                value="{{edge}}">
+                <oj-option id="horiEdge" value="top">Top</oj-option>
+                <oj-option id="horiBottomEdge" value="bottom">Bottom</oj-option>
+              </oj-radioset>
+            </div>
+            <div class="oj-flex-item oj-sm-padding-2x-horizontal">
+              <oj-label id="condenseLabel" class="oj-label" for="condense">Condense</oj-label>
+              <oj-switch id="condense" value="{{isChecked}}"></oj-switch>
+            </div>
+            <div class="oj-flex-item oj-sm-padding-2x-horizontal">
+              <oj-switch
+                id="verticaldividerSwitch"
+                value="{{isDivider}}"
+                label-hint="Divider"
+                label-edge="inside"></oj-switch>
+            </div>
+            <div class="oj-flex-item oj-sm-padding-2x-horizontal">
+              <oj-switch
+                id="contrastBgSwitch"
+                value="{{isContrastBackground}}"
+                label-hint="Dark Background"
+                label-edge="inside"></oj-switch>
+            </div>
+          </div>
+        </div>
+      
+        <div id="tabbarcontainer">
+          <oj-tab-bar
+            selection="{{selectedItem}}"
+            data="[[dataProvider]]"
+            edge="[[edge]]"
+            display="[[display]]">
+            <template slot="itemTemplate" data-oj-as="item">
+              <li>
+                <a href="#">
+                  <span :class="[['oj-tabbar-item-icon ' + item.data.icons]]"></span>
+                  <oj-bind-text value="[[item.data.name]]"></oj-bind-text>
+                </a>
+              </li>
+            </template>
+          </oj-tab-bar>
+        </div>
+        <div>
+          <p class="bold">
+            Last selected list item:
+            <span id="results">
+              <oj-bind-text value="[[selectedItem]]"></oj-bind-text>
+            </span>
+          </p>
+        </div>
+      </div>
+      
+      
+      
+    </div>
+  </div>
