@@ -23,13 +23,13 @@ require(
         constructor() {
             var self = this;
             //URL of REST Web Service
-            self.url = 'http://localhost:8080/04-PersonREST/rest/personapi/add';
+            self.url = 'http://localhost:8080/04-PersonREST/rest/personapi/update';
             this.inputPersonId=ko.observable('');
             this.inputPersonName=ko.observable('');
             this.inputSalary=ko.observable('');
             this.personArr=ko.observable([]);
             this.showTable=ko.observable(false);
-            this.addRow=async ()=>{
+            this.updateRow=async ()=>{
 
                 alert("working")
                 const row = {
@@ -43,7 +43,7 @@ require(
                       "Content-type": "application/json; charset=UTF-8",
                     }),
                     body: JSON.stringify(row),
-                    method: "POST",
+                    method: "PUT",
                   });
                  alert('working2');
                  const response = await fetch(request);
@@ -53,7 +53,7 @@ require(
                  self.personArr=responseText;
                  //location.href="display.html";
                  self.dataprovider = new ArrayDataProvider(self.personArr, {
-                    keyAttributes: "id",
+                    keyAttributes: "DepartmentifId",
                   //  implicitSort: [{ attribute: "DepartmentId", direction: "ascending" }],
                 });
                  self.showTable(true);

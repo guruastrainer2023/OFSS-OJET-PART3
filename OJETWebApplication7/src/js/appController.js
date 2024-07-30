@@ -42,7 +42,10 @@ define(['knockout', 'ojs/ojcontext', 'ojs/ojmodule-element-utils', 'ojs/ojknocko
         { path: 'demo1', detail: { label: 'Demo1', iconClass: 'oj-ux-ico-information-s' } },
         { path: 'demo2', detail: { label: 'Demo2', iconClass: 'oj-ux-ico-information-s' } },
         { path: 'demo3', detail: { label: 'Demo3', iconClass: 'oj-ux-ico-information-s' } },
-        { path: 'demo4', detail: { label: 'Demo4', iconClass: 'oj-ux-ico-information-s' } }
+        { path: 'demo4', detail: { label: 'Demo4', iconClass: 'oj-ux-ico-information-s' } },
+        { path: 'demo5', detail: { label: 'Demo5', iconClass: 'oj-ux-ico-information-s' } },
+        { path: 'demo6', detail: { label: 'Demo6', iconClass: 'oj-ux-ico-information-s' } }
+
       ];
 
       // Router setup
